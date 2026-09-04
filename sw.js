@@ -1,8 +1,10 @@
-const CACHE = 'surpresinha-v3';
+const CACHE = 'surpresinha-v4';
 const ARQUIVOS = [
   './',
   './index.html',
-  './manifest.json'
+  './manifest.json',
+  './assets.js',
+  './app.js'
 ];
 
 self.addEventListener('install', e => {
