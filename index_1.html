@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#E86A9A">
+<title>Surpresinha Doce — Custos e Lucro</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+:root{
+  --rosa:#E86A9A; --rosa-esc:#C94C7C; --rosa-claro:#FDEEF4;
+  --creme:#FFF9F4; --areia:#F5E7DC; --dourado:#C79A5B;
+  --texto:#4A3038; --suave:#8B6B77; --linha:#F0DDE4;
+  --verde:#2E9E6B; --verde-bg:#E7F6EF; --vermelho:#D6455B; --vermelho-bg:#FDECEF;
+  --amarelo:#B8860B; --amarelo-bg:#FDF4E0;
+  --sombra:0 2px 10px rgba(200,120,150,.10);
+  --raio:16px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+  background:var(--creme); color:var(--texto);
+  padding-bottom:90px; font-size:16px;
+}
+h1,h2,h3{margin:0;font-weight:700}
+
+/* ---------- cabeçalho ---------- */
+header{
+  background:linear-gradient(135deg,#E86A9A 0%,#F0A0BC 100%);
+  color:#fff; padding:22px 18px 20px; text-align:center;
+  border-radius:0 0 26px 26px; box-shadow:var(--sombra);
+}
+header .logo{font-size:30px;line-height:1}
+header h1{font-size:21px;letter-spacing:.5px;margin-top:6px}
+header p{margin:4px 0 0;font-size:12.5px;opacity:.92}
+
+/* ---------- abas ---------- */
+nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:50;
+  display:flex;background:#fff;border-top:1px solid var(--linha);
+  padding-bottom:env(safe-area-inset-bottom);
+  box-shadow:0 -2px 14px rgba(200,120,150,.12);
+}
+nav button{
+  flex:1;background:none;border:0;padding:10px 4px 12px;
+  font-size:11px;color:var(--suave);cursor:pointer;font-family:inherit;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+}
+nav button span{font-size:21px;line-height:1}
+nav button.on{color:var(--rosa);font-weight:700}
+
+main{max-width:760px;margin:0 auto;padding:16px 14px}
+.aba{display:none}
+.aba.on{display:block;animation:fade .22s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- cartões ---------- */
+.card{
+  background:#fff;border:1px solid var(--linha);border-radius:var(--raio);
+  padding:16px;margin-bottom:14px;box-shadow:var(--sombra);
+}
+.card h2{font-size:15px;color:var(--rosa-esc);margin-bottom:12px;
+  display:flex;align-items:center;gap:7px}
+
+/* ---------- formulários ---------- */
+label{display:block;font-size:12px;font-weight:600;color:var(--suave);
+  margin:0 0 5px;text-transform:uppercase;letter-spacing:.4px}
+input,select,textarea{
+  width:100%;padding:11px 12px;border:1.5px solid var(--linha);
+  border-radius:11px;font-size:16px;font-family:inherit;color:var(--texto);
+  background:#fff;outline:none;
+}
+input:focus,select:focus{border-color:var(--rosa);box-shadow:0 0 0 3px var(--rosa-claro)}
+.linha{display:flex;gap:10px;margin-bottom:12px;align-items:flex-end}
+.linha>div{flex:1;min-width:0}
+.f{margin-bottom:12px}
+
+button.btn{
+  width:100%;padding:13px;border:0;border-radius:12px;
+  background:var(--rosa);color:#fff;font-size:15px;font-weight:700;
+  font-family:inherit;cursor:pointer;box-shadow:0 3px 8px rgba(232,106,154,.3);
+}
+button.btn:active{transform:translateY(1px)}
+button.btn.sec{background:#fff;color:var(--rosa-esc);border:1.5px solid var(--rosa);
+  box-shadow:none}
+button.btn.mini{padding:9px;font-size:13px}
+
+/* ---------- listas ---------- */
+.item{
+  display:flex;align-items:center;gap:10px;padding:12px 0;
+  border-bottom:1px solid var(--linha);
+}
+.item:last-child{border-bottom:0}
+.item .info{flex:1;min-width:0}
+.item .nome{font-weight:600;font-size:15px}
+.item .sub{font-size:12.5px;color:var(--suave);margin-top:2px}
+.acoes{display:flex;gap:6px;flex-shrink:0}
+.ico{
+  width:34px;height:34px;border:0;border-radius:10px;background:var(--rosa-claro);
+  color:var(--rosa-esc);font-size:15px;cursor:pointer;display:flex;
+  align-items:center;justify-content:center;
+}
+.ico.del{background:var(--vermelho-bg);color:var(--vermelho)}
+
+.vazio{text-align:center;color:var(--suave);padding:26px 10px;font-size:14px;line-height:1.6}
+.vazio .em{font-size:34px;display:block;margin-bottom:8px}
+
+/* ---------- resultados ---------- */
+.res{border-radius:14px;padding:14px;margin-top:12px}
+.res.lucro{background:var(--verde-bg);border:1.5px solid #B9E5D0}
+.res.prej{background:var(--vermelho-bg);border:1.5px solid #F5C2CB}
+.res.alerta{background:var(--amarelo-bg);border:1.5px solid #EBD9A8}
+.res .rl{display:flex;justify-content:space-between;padding:5px 0;font-size:14px}
+.res .rl b{font-size:15px}
+.res .big{font-size:24px;font-weight:800;text-align:center;margin:6px 0 2px}
+.res .tag{text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.6px;opacity:.8}
+.verde{color:var(--verde)} .vermelho{color:var(--vermelho)} .amarelo{color:var(--amarelo)}
+
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px}
+.kpi{background:#fff;border:1px solid var(--linha);border-radius:14px;
+  padding:12px 8px;text-align:center;box-shadow:var(--sombra)}
+.kpi .v{font-size:19px;font-weight:800;color:var(--rosa-esc)}
+.kpi .l{font-size:10.5px;color:var(--suave);text-transform:uppercase;
+  letter-spacing:.4px;margin-top:3px}
+
+.chip{display:inline-block;background:var(--rosa-claro);color:var(--rosa-esc);
+  border-radius:20px;padding:3px 10px;font-size:11.5px;font-weight:700;margin-left:6px}
+
+.dica{background:var(--areia);border-radius:12px;padding:11px 13px;
+  font-size:12.5px;color:#6B5344;line-height:1.55;margin-top:10px}
+
+hr.sep{border:0;border-top:1px dashed var(--linha);margin:14px 0}
+
+/* linhas de ingrediente dentro da receita */
+.ri{display:flex;gap:8px;align-items:flex-end;margin-bottom:9px}
+.ri .g1{flex:2;min-width:0} .ri .g2{flex:1;min-width:0} .ri .g3{flex:.92;min-width:0}
+.ri input,.ri select{padding:9px 6px;font-size:13.5px}
+.ri .s-un{padding-right:2px}
+.ri .ico{height:38px;width:38px}
+.custo-ri{font-size:12px;color:var(--suave);text-align:right;margin:-4px 0 8px 0}
+
+.tabs2{display:flex;gap:6px;margin-bottom:14px}
+.tabs2 button{flex:1;padding:9px;border:1.5px solid var(--linha);background:#fff;
+  border-radius:11px;font-size:13px;font-weight:600;color:var(--suave);
+  font-family:inherit;cursor:pointer}
+.tabs2 button.on{background:var(--rosa);color:#fff;border-color:var(--rosa)}
+
+footer{text-align:center;font-size:11.5px;color:var(--suave);padding:6px 0 4px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🧁</div>
+  <h1>Surpresinha Doce</h1>
+  <p>Controle de ingredientes, custos e lucro</p>
+</header>
+
+<main>
+
+<!-- ================= INGREDIENTES ================= -->
+<section id="aba-ing" class="aba on">
+  <div class="card">
+    <h2>🛒 <span id="tit-ing">Novo ingrediente</span></h2>
+    <div class="f">
+      <label>Nome do ingrediente</label>
+      <input id="i-nome" placeholder="Ex.: Farinha de trigo">
+    </div>
+    <div class="linha">
+      <div>
+        <label>Preço (R$)</label>
+        <input id="i-preco" type="number" inputmode="decimal" step="0.01" placeholder="25,90">
+      </div>
+      <div>
+        <label>Quantidade</label>
+        <input id="i-qtd" type="number" inputmode="decimal" step="0.001" placeholder="5">
+      </div>
+      <div>
+        <label>Unidade</label>
+        <select id="i-un">
+          <option value="kg">kg</option>
+          <option value="g">g</option>
+          <option value="L">L</option>
+          <option value="ml">ml</option>
+          <option value="un">unidade</option>
+        </select>
+      </div>
+    </div>
+    <div id="i-preview" class="dica" style="display:none"></div>
+    <div class="linha" style="margin-top:12px">
+      <div><button class="btn" onclick="salvarIng()" id="i-btn">Adicionar ingrediente</button></div>
+      <div id="i-cancel" style="display:none;flex:0 0 110px">
+        <button class="btn sec" onclick="cancelarIng()">Cancelar</button>
+      </div>
+    </div>
+    <div class="dica">
+      💡 Coloque o preço e a quantidade da <b>embalagem inteira</b> que você compra.
+      Ex.: saco de farinha de <b>5 kg</b> por <b>R$ 25,90</b>. O app calcula sozinho quanto custa cada grama.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Meus ingredientes <span class="chip" id="ing-contador">0</span></h2>
+    <div id="lista-ing"></div>
+  </div>
+</section>
+
+<!-- ================= RECEITAS ================= -->
+<section id="aba-rec" class="aba">
+  <div class="card">
+    <h2>🎂 <span id="tit-rec">Nova receita / bolo</span></h2>
+    <div class="f">
+      <label>Nome do bolo ou doce</label>
+      <input id="r-nome" placeholder="Ex.: Bolo de chocolate 2kg">
+    </div>
+
+    <label>Ingredientes usados</label>
+    <div id="r-itens"></div>
+    <button class="btn sec mini" onclick="addLinhaItem()">+ Adicionar ingrediente</button>
+
+    <hr class="sep">
+
+    <label>Outros custos (gás, embalagem, energia, mão de obra…)</label>
+    <div id="r-extras"></div>
+    <button class="btn sec mini" onclick="addLinhaExtra()">+ Adicionar custo</button>
+
+    <hr class="sep">
+
+    <div class="linha">
+      <div>
+        <label>Preço de venda (R$)</label>
+        <input id="r-venda" type="number" inputmode="decimal" step="0.01" placeholder="80,00" oninput="calcRec()">
+      </div>
+      <div>
+        <label>Rendimento (unid.)</label>
+        <input id="r-rende" type="number" inputmode="decimal" step="1" value="1" oninput="calcRec()">
+      </div>
+    </div>
+
+    <div id="r-resultado"></div>
+
+    <div class="linha" style="margin-top:14px">
+      <div><button class="btn" onclick="salvarRec()" id="r-btn">Salvar receita</button></div>
+      <div id="r-cancel" style="display:none;flex:0 0 110px">
+        <button class="btn sec" onclick="cancelarRec()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📖 Minhas receitas <span class="chip" id="rec-contador">0</span></h2>
+    <div id="lista-rec"></div>
+  </div>
+</section>
+
+<!-- ================= PRECIFICAR ================= -->
+<section id="aba-preco" class="aba">
+  <div class="card">
+    <h2>💰 Quanto devo cobrar?</h2>
+    <div class="f">
+      <label>Escolha uma receita</label>
+      <select id="p-rec" onchange="calcPreco()"></select>
+    </div>
+    <div class="tabs2">
+      <button id="p-t-margem" class="on" onclick="modoPreco('margem')">Por margem de lucro</button>
+      <button id="p-t-markup" onclick="modoPreco('markup')">Por multiplicador</button>
+    </div>
+    <div class="f" id="p-box-margem">
+      <label>Margem de lucro desejada (%)</label>
+      <input id="p-margem" type="number" inputmode="decimal" value="50" oninput="calcPreco()">
+    </div>
+    <div class="f" id="p-box-markup" style="display:none">
+      <label>Multiplicar o custo por</label>
+      <input id="p-markup" type="number" inputmode="decimal" step="0.1" value="3" oninput="calcPreco()">
+    </div>
+    <div id="p-resultado"></div>
+    <div class="dica">
+      💡 <b>Margem</b> = quanto do preço final é lucro. Margem de 50% num custo de R$ 40 → vender por R$ 80.<br>
+      <b>Multiplicador</b> é o jeito mais comum na confeitaria: custo × 3.
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESUMO ================= -->
+<section id="aba-resumo" class="aba">
+  <div class="kpis">
+    <div class="kpi"><div class="v" id="k-ing">0</div><div class="l">Ingredientes</div></div>
+    <div class="kpi"><div class="v" id="k-rec">0</div><div class="l">Receitas</div></div>
+    <div class="kpi"><div class="v" id="k-marg">0%</div><div class="l">Margem média</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📊 Lucro por receita</h2>
+    <div id="resumo-lista"></div>
+  </div>
+
+  <div class="card">
+    <h2>💾 Backup dos dados</h2>
+    <p style="font-size:13px;color:var(--suave);margin:0 0 12px;line-height:1.55">
+      Os dados ficam salvos neste aparelho. Faça um backup de vez em quando
+      para não perder nada se trocar de celular.
+    </p>
+    <div class="linha">
+      <div><button class="btn sec mini" onclick="exportar()">⬇️ Baixar backup</button></div>
+      <div><button class="btn sec mini" onclick="document.getElementById('arq').click()">⬆️ Restaurar</button></div>
+    </div>
+    <input type="file" id="arq" accept=".json" style="display:none" onchange="importar(event)">
+    <hr class="sep">
+    <button class="btn sec mini" style="color:var(--vermelho);border-color:var(--vermelho)" onclick="apagarTudo()">🗑️ Apagar todos os dados</button>
+  </div>
+
+  <footer>Feito com carinho para a Surpresinha Doce 💕</footer>
+</section>
+
+</main>
+
+<nav>
+  <button class="on" data-aba="ing"   onclick="irAba('ing')"><span>🛒</span>Ingredientes</button>
+  <button data-aba="rec"   onclick="irAba('rec')"><span>🎂</span>Receitas</button>
+  <button data-aba="preco" onclick="irAba('preco')"><span>💰</span>Preço</button>
+  <button data-aba="resumo" onclick="irAba('resumo')"><span>📊</span>Resumo</button>
+</nav>
+
+<script>
+/* =========================================================
+   DADOS
+   ========================================================= */
+const CHAVE = 'surpresinha-doce-v1';
+let db = { ingredientes: [], receitas: [] };
+let editIng = null, editRec = null;
+
+function carregar(){
+  try{
+    const s = localStorage.getItem(CHAVE);
+    if(s){ const d = JSON.parse(s);
+      db.ingredientes = d.ingredientes || [];
+      db.receitas = d.receitas || [];
+    }
+  }catch(e){ console.warn('Não foi possível ler os dados salvos', e); }
+}
+function salvar(){
+  try{ localStorage.setItem(CHAVE, JSON.stringify(db)); }
+  catch(e){ alert('Não consegui salvar os dados neste navegador.'); }
+}
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+
+/* =========================================================
+   UNIDADES  (base: g / ml / un)
+   ========================================================= */
+const FAM = { kg:'peso', g:'peso', L:'vol', ml:'vol', un:'un' };
+const FATOR = { kg:1000, g:1, L:1000, ml:1, un:1 };
+const BASE = { peso:'g', vol:'ml', un:'un' };
+const UNS_DE = { peso:['kg','g'], vol:['L','ml'], un:['un'] };
+function paraBase(qtd, un){ return qtd * FATOR[un]; }
+
+/* custo por unidade base (por grama, por ml ou por unidade) */
+function custoBase(ing){
+  const q = paraBase(ing.qtd, ing.un);
+  return q > 0 ? ing.preco / q : 0;
+}
+const brl = v => 'R$ ' + (isFinite(v)?v:0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const pct = v => (isFinite(v)?v:0).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1}) + '%';
+const num = v => { const n = parseFloat(String(v).replace(',','.')); return isFinite(n)?n:0; };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+function irAba(a){
+  document.querySelectorAll('.aba').forEach(s=>s.classList.remove('on'));
+  document.getElementById('aba-'+a).classList.add('on');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on', b.dataset.aba===a));
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(a==='rec') atualizarSelectsIng();
+  if(a==='preco') montarSelectPreco();
+  if(a==='resumo') montarResumo();
+}
+
+/* =========================================================
+   INGREDIENTES
+   ========================================================= */
+function previewIng(){
+  const p = num(document.getElementById('i-preco').value);
+  const q = num(document.getElementById('i-qtd').value);
+  const u = document.getElementById('i-un').value;
+  const el = document.getElementById('i-preview');
+  if(p>0 && q>0){
+    const c = p / paraBase(q,u);
+    const b = BASE[FAM[u]];
+    const rot = b==='un' ? 'cada unidade' : ('cada ' + (b==='g'?'grama':'ml'));
+    const mil = b==='un' ? '' : ' &nbsp;•&nbsp; ' + (b==='g'?'1 kg':'1 litro') + ' = <b>'+brl(c*1000)+'</b>';
+    el.style.display='block';
+    el.innerHTML = '🧮 '+rot+' custa <b>'+brl(c).replace('R$ ','R$ ')+'</b>'+mil;
+  } else el.style.display='none';
+}
+['i-preco','i-qtd','i-un'].forEach(id=>document.getElementById(id).addEventListener('input',previewIng));
+document.getElementById('i-un').addEventListener('change',previewIng);
+
+function salvarIng(){
+  const nome = document.getElementById('i-nome').value.trim();
+  const preco = num(document.getElementById('i-preco').value);
+  const qtd = num(document.getElementById('i-qtd').value);
+  const un = document.getElementById('i-un').value;
+  if(!nome) return alert('Escreva o nome do ingrediente.');
+  if(preco<=0) return alert('Coloque o preço que você pagou.');
+  if(qtd<=0) return alert('Coloque a quantidade da embalagem.');
+
+  if(editIng){
+    const i = db.ingredientes.find(x=>x.id===editIng);
+    Object.assign(i,{nome,preco,qtd,un});
+  } else {
+    db.ingredientes.push({id:uid(),nome,preco,qtd,un});
+  }
+  salvar(); cancelarIng(); renderIng(); atualizarSelectsIng(); montarSelectPreco();
+}
+function editarIng(id){
+  const i = db.ingredientes.find(x=>x.id===id); if(!i) return;
+  editIng = id;
+  document.getElementById('i-nome').value=i.nome;
+  document.getElementById('i-preco').value=i.preco;
+  document.getElementById('i-qtd').value=i.qtd;
+  document.getElementById('i-un').value=i.un;
+  document.getElementById('tit-ing').textContent='Editar ingrediente';
+  document.getElementById('i-btn').textContent='Salvar alterações';
+  document.getElementById('i-cancel').style.display='block';
+  previewIng();
+  irAba('ing');
+}
+function cancelarIng(){
+  editIng=null;
+  ['i-nome','i-preco','i-qtd'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('i-un').value='kg';
+  document.getElementById('tit-ing').textContent='Novo ingrediente';
+  document.getElementById('i-btn').textContent='Adicionar ingrediente';
+  document.getElementById('i-cancel').style.display='none';
+  document.getElementById('i-preview').style.display='none';
+}
+function excluirIng(id){
+  const usos = db.receitas.filter(r=>r.itens.some(it=>it.ing===id));
+  if(usos.length && !confirm('Este ingrediente é usado em '+usos.length+' receita(s). Apagar mesmo assim?')) return;
+  if(!usos.length && !confirm('Apagar este ingrediente?')) return;
+  db.ingredientes = db.ingredientes.filter(x=>x.id!==id);
+  salvar(); renderIng(); atualizarSelectsIng(); montarSelectPreco();
+}
+
+function renderIng(){
+  const el = document.getElementById('lista-ing');
+  document.getElementById('ing-contador').textContent = db.ingredientes.length;
+  if(!db.ingredientes.length){
+    el.innerHTML = '<div class="vazio"><span class="em">🥣</span>Nenhum ingrediente ainda.<br>Comece cadastrando farinha, açúcar, leite…</div>';
+    return;
+  }
+  el.innerHTML = db.ingredientes
+    .slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'))
+    .map(i=>{
+      const c = custoBase(i);
+      const b = BASE[FAM[i.un]];
+      const ref = b==='un' ? brl(c)+' / unidade'
+                : b==='g' ? brl(c*1000)+' / kg'
+                : brl(c*1000)+' / litro';
+      return '<div class="item">'
+        +'<div class="info"><div class="nome">'+esc(i.nome)+'</div>'
+        +'<div class="sub">'+brl(i.preco)+' • '+i.qtd.toLocaleString("pt-BR")+' '+i.un+' &nbsp;→&nbsp; <b>'+ref+'</b></div></div>'
+        +'<div class="acoes">'
+        +'<button class="ico" onclick="editarIng(\''+i.id+'\')">✏️</button>'
+        +'<button class="ico del" onclick="excluirIng(\''+i.id+'\')">🗑️</button>'
+        +'</div></div>';
+    }).join('');
+}
+
+/* =========================================================
+   RECEITAS — montagem do formulário
+   ========================================================= */
+function opcoesIng(sel){
+  if(!db.ingredientes.length) return '<option value="">— cadastre ingredientes —</option>';
+  return '<option value="">Escolher…</option>' + db.ingredientes
+    .slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'))
+    .map(i=>'<option value="'+i.id+'"'+(i.id===sel?' selected':'')+'>'+esc(i.nome)+'</option>').join('');
+}
+function addLinhaItem(dados){
+  const d = dados || {ing:'',qtd:'',un:''};
+  const div = document.createElement('div');
+  div.className = 'ri-wrap';
+  div.innerHTML =
+    '<div class="ri">'
+    +'<div class="g1"><select class="s-ing" onchange="mudouIng(this)">'+opcoesIng(d.ing)+'</select></div>'
+    +'<div class="g2"><input class="s-qtd" type="number" inputmode="decimal" step="0.001" placeholder="Qtd" value="'+(d.qtd||'')+'" oninput="calcRec()"></div>'
+    +'<div class="g3"><select class="s-un" onchange="calcRec()"></select></div>'
+    +'<button class="ico del" onclick="this.closest(\'.ri-wrap\').remove();calcRec()">✕</button>'
+    +'</div><div class="custo-ri"></div>';
+  document.getElementById('r-itens').appendChild(div);
+  preencherUn(div.querySelector('.s-ing'), d.un);
+  calcRec();
+}
+function preencherUn(selIng, escolhida){
+  const wrap = selIng.closest('.ri-wrap');
+  const selUn = wrap.querySelector('.s-un');
+  const ing = db.ingredientes.find(x=>x.id===selIng.value);
+  const fam = ing ? FAM[ing.un] : 'peso';
+  selUn.innerHTML = UNS_DE[fam].map(u=>'<option value="'+u+'">'+(u==='un'?'unid.':u)+'</option>').join('');
+  if(escolhida && UNS_DE[fam].includes(escolhida)) selUn.value = escolhida;
+  else selUn.value = BASE[fam];
+}
+function mudouIng(sel){ preencherUn(sel); calcRec(); }
+
+/* mantém as listas de ingredientes das receitas sempre atualizadas */
+function atualizarSelectsIng(){
+  document.querySelectorAll('#r-itens .ri-wrap').forEach(w=>{
+    const sel = w.querySelector('.s-ing');
+    const un = w.querySelector('.s-un').value;
+    const atual = sel.value;
+    sel.innerHTML = opcoesIng(atual);
+    if(atual && !db.ingredientes.some(i=>i.id===atual)) sel.value='';
+    preencherUn(sel, un);
+  });
+  calcRec();
+}
+
+function addLinhaExtra(dados){
+  const d = dados || {nome:'',valor:''};
+  const div = document.createElement('div');
+  div.className = 'ri-wrap';
+  div.innerHTML =
+    '<div class="ri">'
+    +'<div class="g1"><input class="e-nome" placeholder="Ex.: Embalagem" value="'+esc(d.nome)+'"></div>'
+    +'<div class="g2"><input class="e-val" type="number" inputmode="decimal" step="0.01" placeholder="R$" value="'+(d.valor||'')+'" oninput="calcRec()"></div>'
+    +'<button class="ico del" onclick="this.closest(\'.ri-wrap\').remove();calcRec()">✕</button>'
+    +'</div>';
+  document.getElementById('r-extras').appendChild(div);
+  calcRec();
+}
+
+function lerFormRec(){
+  const itens = [];
+  document.querySelectorAll('#r-itens .ri-wrap').forEach(w=>{
+    const id = w.querySelector('.s-ing').value;
+    const q = num(w.querySelector('.s-qtd').value);
+    const u = w.querySelector('.s-un').value;
+    if(id && q>0) itens.push({ing:id, qtd:q, un:u});
+  });
+  const extras = [];
+  document.querySelectorAll('#r-extras .ri-wrap').forEach(w=>{
+    const n = w.querySelector('.e-nome').value.trim();
+    const v = num(w.querySelector('.e-val').value);
+    if(v>0) extras.push({nome:n||'Outro custo', valor:v});
+  });
+  return {
+    nome: document.getElementById('r-nome').value.trim(),
+    itens, extras,
+    venda: num(document.getElementById('r-venda').value),
+    rende: Math.max(1, num(document.getElementById('r-rende').value) || 1)
+  };
+}
+
+/* =========================================================
+   CÁLCULO
+   ========================================================= */
+function custoItem(it){
+  const ing = db.ingredientes.find(x=>x.id===it.ing);
+  if(!ing) return 0;
+  return paraBase(it.qtd, it.un) * custoBase(ing);
+}
+function calcular(r){
+  const cIng = r.itens.reduce((s,it)=>s+custoItem(it),0);
+  const cExtra = r.extras.reduce((s,e)=>s+e.valor,0);
+  const custo = cIng + cExtra;
+  const lucro = r.venda - custo;
+  const margem = r.venda>0 ? (lucro/r.venda)*100 : 0;
+  const markup = custo>0 ? r.venda/custo : 0;
+  return {cIng,cExtra,custo,lucro,margem,markup,
+          rende:r.rende||1,
+          custoUn: custo/(r.rende||1), vendaUn: r.venda/(r.rende||1)};
+}
+
+function calcRec(){
+  const r = lerFormRec();
+  /* custo por linha */
+  document.querySelectorAll('#r-itens .ri-wrap').forEach(w=>{
+    const id = w.querySelector('.s-ing').value;
+    const q = num(w.querySelector('.s-qtd').value);
+    const u = w.querySelector('.s-un').value;
+    const alvo = w.querySelector('.custo-ri');
+    if(id && q>0) alvo.textContent = '= ' + brl(custoItem({ing:id,qtd:q,un:u}));
+    else alvo.textContent = '';
+  });
+
+  const c = calcular(r);
+  const el = document.getElementById('r-resultado');
+  if(c.custo<=0 && r.venda<=0){ el.innerHTML=''; return; }
+
+  let classe='alerta', tag='Preço de venda não informado', cor='amarelo';
+  if(r.venda>0){
+    if(c.lucro>0){ classe='lucro'; tag='Lucro'; cor='verde'; }
+    else { classe='prej'; tag='Prejuízo'; cor='vermelho'; }
+  }
+  let aviso='';
+  if(r.venda>0 && c.margem>0 && c.margem<20)
+    aviso = '<div class="dica" style="margin-top:10px">⚠️ Margem baixa. Na confeitaria costuma-se trabalhar com margem de 40% a 65%.</div>';
+
+  el.innerHTML =
+    '<div class="res '+classe+'">'
+    +'<div class="rl"><span>Ingredientes</span><b>'+brl(c.cIng)+'</b></div>'
+    +(c.cExtra>0?'<div class="rl"><span>Outros custos</span><b>'+brl(c.cExtra)+'</b></div>':'')
+    +'<div class="rl"><span>Custo total</span><b>'+brl(c.custo)+'</b></div>'
+    +(r.venda>0?'<div class="rl"><span>Preço de venda</span><b>'+brl(r.venda)+'</b></div>':'')
+    +'<hr class="sep" style="margin:8px 0">'
+    +'<div class="big '+cor+'">'+brl(c.lucro)+'</div>'
+    +'<div class="tag '+cor+'">'+tag+(r.venda>0?' • margem '+pct(c.margem):'')+'</div>'
+    +(r.venda>0?'<div class="rl" style="margin-top:8px"><span>Multiplicador do custo</span><b>'+c.markup.toLocaleString('pt-BR',{maximumFractionDigits:2})+'×</b></div>':'')
+    +(c.rende>1?'<div class="rl"><span>Por unidade ('+c.rende+')</span><b>custo '+brl(c.custoUn)+' • venda '+brl(c.vendaUn)+'</b></div>':'')
+    +'</div>'+aviso;
+}
+
+/* =========================================================
+   RECEITAS — CRUD
+   ========================================================= */
+function salvarRec(){
+  const r = lerFormRec();
+  if(!r.nome) return alert('Dê um nome para a receita.');
+  if(!r.itens.length) return alert('Adicione pelo menos um ingrediente.');
+  if(editRec){
+    const x = db.receitas.find(y=>y.id===editRec);
+    Object.assign(x, r);
+  } else {
+    db.receitas.push(Object.assign({id:uid()}, r));
+  }
+  salvar(); cancelarRec(); renderRec(); montarSelectPreco();
+}
+function editarRec(id){
+  const r = db.receitas.find(x=>x.id===id); if(!r) return;
+  editRec = id;
+  document.getElementById('r-nome').value = r.nome;
+  document.getElementById('r-venda').value = r.venda || '';
+  document.getElementById('r-rende').value = r.rende || 1;
+  document.getElementById('r-itens').innerHTML='';
+  document.getElementById('r-extras').innerHTML='';
+  r.itens.forEach(it=>addLinhaItem(it));
+  r.extras.forEach(e=>addLinhaExtra(e));
+  document.getElementById('tit-rec').textContent='Editar receita';
+  document.getElementById('r-btn').textContent='Salvar alterações';
+  document.getElementById('r-cancel').style.display='block';
+  irAba('rec'); calcRec();
+}
+function duplicarRec(id){
+  const r = db.receitas.find(x=>x.id===id); if(!r) return;
+  const c = JSON.parse(JSON.stringify(r));
+  c.id = uid(); c.nome = r.nome + ' (cópia)';
+  db.receitas.push(c); salvar(); renderRec(); montarSelectPreco();
+}
+function cancelarRec(){
+  editRec=null;
+  document.getElementById('r-nome').value='';
+  document.getElementById('r-venda').value='';
+  document.getElementById('r-rende').value=1;
+  document.getElementById('r-itens').innerHTML='';
+  document.getElementById('r-extras').innerHTML='';
+  document.getElementById('r-resultado').innerHTML='';
+  document.getElementById('tit-rec').textContent='Nova receita / bolo';
+  document.getElementById('r-btn').textContent='Salvar receita';
+  document.getElementById('r-cancel').style.display='none';
+  addLinhaItem();
+}
+function excluirRec(id){
+  if(!confirm('Apagar esta receita?')) return;
+  db.receitas = db.receitas.filter(x=>x.id!==id);
+  salvar(); renderRec(); montarSelectPreco();
+}
+function renderRec(){
+  const el = document.getElementById('lista-rec');
+  document.getElementById('rec-contador').textContent = db.receitas.length;
+  if(!db.receitas.length){
+    el.innerHTML='<div class="vazio"><span class="em">🎂</span>Nenhuma receita ainda.<br>Monte seu primeiro bolo acima.</div>';
+    return;
+  }
+  el.innerHTML = db.receitas.map(r=>{
+    const c = calcular(r);
+    const cor = r.venda<=0 ? 'amarelo' : (c.lucro>0?'verde':'vermelho');
+    return '<div class="item">'
+      +'<div class="info"><div class="nome">'+esc(r.nome)+'</div>'
+      +'<div class="sub">Custo <b>'+brl(c.custo)+'</b> • Venda <b>'+brl(r.venda)+'</b> • '
+      +'<b class="'+cor+'">'+brl(c.lucro)+' ('+pct(c.margem)+')</b></div></div>'
+      +'<div class="acoes">'
+      +'<button class="ico" onclick="editarRec(\''+r.id+'\')">✏️</button>'
+      +'<button class="ico" onclick="duplicarRec(\''+r.id+'\')">⧉</button>'
+      +'<button class="ico del" onclick="excluirRec(\''+r.id+'\')">🗑️</button>'
+      +'</div></div>';
+  }).join('');
+}
+
+/* =========================================================
+   PRECIFICAR
+   ========================================================= */
+let modo = 'margem';
+function modoPreco(m){
+  modo = m;
+  document.getElementById('p-t-margem').classList.toggle('on', m==='margem');
+  document.getElementById('p-t-markup').classList.toggle('on', m==='markup');
+  document.getElementById('p-box-margem').style.display = m==='margem'?'block':'none';
+  document.getElementById('p-box-markup').style.display = m==='markup'?'block':'none';
+  calcPreco();
+}
+function montarSelectPreco(){
+  const s = document.getElementById('p-rec');
+  const atual = s.value;
+  s.innerHTML = db.receitas.length
+    ? db.receitas.map(r=>'<option value="'+r.id+'">'+esc(r.nome)+'</option>').join('')
+    : '<option value="">— nenhuma receita cadastrada —</option>';
+  if(atual && db.receitas.some(r=>r.id===atual)) s.value = atual;
+  calcPreco();
+}
+function calcPreco(){
+  const el = document.getElementById('p-resultado');
+  const r = db.receitas.find(x=>x.id===document.getElementById('p-rec').value);
+  if(!r){ el.innerHTML='<div class="vazio"><span class="em">🎂</span>Cadastre uma receita primeiro.</div>'; return; }
+  const c = calcular(r);
+  if(c.custo<=0){ el.innerHTML='<div class="vazio">Esta receita ainda não tem custo calculado.</div>'; return; }
+
+  let sug;
+  if(modo==='margem'){
+    const m = Math.min(95, Math.max(0, num(document.getElementById('p-margem').value)));
+    sug = c.custo / (1 - m/100);
+  } else {
+    const k = Math.max(1, num(document.getElementById('p-markup').value) || 1);
+    sug = c.custo * k;
+  }
+  const lucro = sug - c.custo;
+  const margem = sug>0 ? (lucro/sug)*100 : 0;
+
+  el.innerHTML =
+    '<div class="res lucro">'
+    +'<div class="rl"><span>Custo da receita</span><b>'+brl(c.custo)+'</b></div>'
+    +'<div class="tag verde" style="margin-top:8px">Preço sugerido</div>'
+    +'<div class="big verde">'+brl(sug)+'</div>'
+    +'<div class="rl"><span>Lucro</span><b>'+brl(lucro)+'</b></div>'
+    +'<div class="rl"><span>Margem</span><b>'+pct(margem)+'</b></div>'
+    +'<div class="rl"><span>Multiplicador</span><b>'+(sug/c.custo).toLocaleString('pt-BR',{maximumFractionDigits:2})+'×</b></div>'
+    +(c.rende>1?'<div class="rl"><span>Por unidade ('+c.rende+')</span><b>'+brl(sug/c.rende)+'</b></div>':'')
+    +(r.venda>0?'<div class="rl"><span>Preço atual</span><b>'+brl(r.venda)+'</b></div>':'')
+    +'</div>';
+}
+
+/* =========================================================
+   RESUMO
+   ========================================================= */
+function montarResumo(){
+  document.getElementById('k-ing').textContent = db.ingredientes.length;
+  document.getElementById('k-rec').textContent = db.receitas.length;
+  const comPreco = db.receitas.filter(r=>r.venda>0);
+  const media = comPreco.length
+    ? comPreco.reduce((s,r)=>s+calcular(r).margem,0)/comPreco.length : 0;
+  document.getElementById('k-marg').textContent = comPreco.length ? pct(media) : '—';
+
+  const el = document.getElementById('resumo-lista');
+  if(!db.receitas.length){
+    el.innerHTML='<div class="vazio"><span class="em">📊</span>Nada para mostrar ainda.</div>';
+    return;
+  }
+  const lista = db.receitas.map(r=>({r, c:calcular(r)}))
+    .sort((a,b)=>b.c.lucro-a.c.lucro);
+  const maxL = Math.max(...lista.map(x=>Math.abs(x.c.lucro)), 1);
+  el.innerHTML = lista.map(({r,c})=>{
+    const cor = r.venda<=0?'#C79A5B':(c.lucro>0?'#2E9E6B':'#D6455B');
+    const larg = Math.max(4, Math.abs(c.lucro)/maxL*100);
+    return '<div style="padding:11px 0;border-bottom:1px solid var(--linha)">'
+      +'<div style="display:flex;justify-content:space-between;font-size:14px;font-weight:600">'
+      +'<span>'+esc(r.nome)+'</span><span style="color:'+cor+'">'+brl(c.lucro)+'</span></div>'
+      +'<div style="height:8px;background:var(--rosa-claro);border-radius:6px;margin-top:7px;overflow:hidden">'
+      +'<div style="height:100%;width:'+larg+'%;background:'+cor+';border-radius:6px"></div></div>'
+      +'<div class="sub" style="font-size:12px;color:var(--suave);margin-top:5px">'
+      +'custo '+brl(c.custo)+' • venda '+brl(r.venda)+' • margem '+pct(c.margem)+'</div>'
+      +'</div>';
+  }).join('');
+}
+
+/* =========================================================
+   BACKUP
+   ========================================================= */
+function exportar(){
+  const blob = new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'surpresinha-doce-backup-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click(); URL.revokeObjectURL(a.href);
+}
+function importar(ev){
+  const f = ev.target.files[0]; if(!f) return;
+  const rd = new FileReader();
+  rd.onload = e => {
+    try{
+      const d = JSON.parse(e.target.result);
+      if(!d.ingredientes && !d.receitas) throw 0;
+      if(!confirm('Isso vai substituir os dados atuais. Continuar?')) return;
+      db.ingredientes = d.ingredientes||[]; db.receitas = d.receitas||[];
+      salvar(); renderIng(); renderRec(); atualizarSelectsIng(); montarSelectPreco(); montarResumo();
+      alert('Backup restaurado! ✅');
+    }catch(err){ alert('Arquivo inválido.'); }
+  };
+  rd.readAsText(f); ev.target.value='';
+}
+function apagarTudo(){
+  if(!confirm('Isso apaga TODOS os ingredientes e receitas. Tem certeza?')) return;
+  if(!confirm('Confirma mesmo? Não dá para desfazer.')) return;
+  db = {ingredientes:[],receitas:[]}; salvar();
+  renderIng(); renderRec(); montarSelectPreco(); montarResumo();
+}
+
+/* =========================================================
+   INÍCIO
+   ========================================================= */
+carregar();
+renderIng();
+renderRec();
+addLinhaItem();
+montarSelectPreco();
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>
