@@ -1,4 +1,4 @@
-const CACHE = 'surpresinha-v1';
+const CACHE = 'surpresinha-v2';
 const ARQUIVOS = [
   './',
   './index.html',
